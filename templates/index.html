@@ -51,6 +51,23 @@
             background-color: white;
             border-radius: 4px;
             overflow: auto;
+            width: 100%;
+            min-height: 500px;
+            max-height: 80vh;
+            position: relative;
+        }
+        .mermaid {
+            min-width: 100%;
+            overflow: visible;
+        }
+        .diagram-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+            background-color: rgba(255,255,255,0.8);
+            padding: 5px;
+            border-radius: 4px;
         }
         .error {
             color: red;
@@ -163,9 +180,12 @@
             theme: 'default',
             securityLevel: 'loose',
             flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true
-            }
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            maxTextSize: 50000,
+            fontSize: 14
         });
         
         // Tab switching
@@ -246,6 +266,9 @@
                 
                 // Reinitialize mermaid
                 await mermaid.run();
+                
+                // Setup diagram controls
+                setupDiagramControls('text-diagram');
             } catch (error) {
                 diagramDiv.innerHTML = `<div class="error">Error generating diagram: ${error.message}</div>`;
             }
@@ -352,6 +375,9 @@
             
             // Reinitialize mermaid
             mermaid.run();
+            
+            // Setup diagram controls
+            setTimeout(() => setupDiagramControls('code-diagram'), 500);
         }
         
         function populateNodeList(nodes) {
@@ -448,6 +474,59 @@
                 
             } catch (error) {
                 interpretationDiv.innerHTML = `<div class="error">Error generating interpretation: ${error.message}</div>`;
+            }
+        }
+        
+        // Add zoom/pan functionality to diagrams
+        function setupDiagramControls(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            // Add controls
+            const controlsDiv = document.createElement('div');
+            controlsDiv.className = 'diagram-controls';
+            controlsDiv.innerHTML = `
+                <button onclick="zoomDiagram('${containerId}', 1.2)">+</button>
+                <button onclick="zoomDiagram('${containerId}', 0.8)">-</button>
+                <button onclick="resetDiagram('${containerId}')">Reset</button>
+                <button onclick="toggleFullscreen('${containerId}')">Full</button>
+            `;
+            container.appendChild(controlsDiv);
+            
+            // Set initial scale
+            const diagram = container.querySelector('.mermaid');
+            if (diagram) {
+                diagram.style.transform = 'scale(1)';
+                diagram.style.transformOrigin = 'top left';
+            }
+        }
+
+        function zoomDiagram(containerId, factor) {
+            const container = document.getElementById(containerId);
+            const diagram = container.querySelector('.mermaid');
+            if (!diagram) return;
+            
+            const currentScale = parseFloat(diagram.style.transform.replace('scale(', '').replace(')', '') || '1');
+            const newScale = currentScale * factor;
+            diagram.style.transform = `scale(${newScale})`;
+        }
+
+        function resetDiagram(containerId) {
+            const container = document.getElementById(containerId);
+            const diagram = container.querySelector('.mermaid');
+            if (diagram) {
+                diagram.style.transform = 'scale(1)';
+            }
+        }
+
+        function toggleFullscreen(containerId) {
+            const container = document.getElementById(containerId);
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
             }
         }
     </script>
