@@ -1,82 +1,91 @@
-DB-archfool\templates\index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architecture Diagram Generator</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
-    <link rel="stylesheet" href="static\styles.css">
+    <title>Code2Arch - Code to Architecture Converter</title>
+    <link rel="stylesheet" href="static/styless.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Code2Arch</h1>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#try">Try It</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>From Code to Architecture in Seconds</h2>
+            <p>Generate precise architectural diagrams from your code effortlessly.</p>
+            <!-- Updated Try It Now button -->
+            <a href="/dashboard" id="try-now-btn" class="btn primary">Try It Now</a>
+            <a href="#features" class="btn secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- Features Section -->
+<!-- Features Section -->
+<section id="features" class="features">
     <div class="container">
-        <h1>Architecture & Code Analysis Tool</h1>
-       
-        <div class="tabs">
-            <div class="tab active" onclick="switchTab('text-tab')">Text to Diagram</div>
-            <div class="tab" onclick="switchTab('code-tab')">Code Analysis</div>
-        </div>
-       
-        <div id="text-tab" class="tab-content active">
-            <h2>Generate Diagram from Text</h2>
-            <textarea id="input-text" placeholder="Enter your architecture description here..."></textarea>
-            <button onclick="generateDiagram()">Generate Diagram</button>
-            <div id="text-diagram" class="diagram-container"></div>
-        </div>
-       
-        <div id="code-tab" class="tab-content">
-            <h2>Analyze Code Structure</h2>
-            <div class="upload-options">
-                <div class="option">
-                    <h3>Upload ZIP File</h3>
-                    <form id="upload-form" enctype="multipart/form-data">
-                        <input type="file" id="codebase-upload" name="codebase" accept=".zip">
-                        <button type="button" onclick="uploadCodebase()">Upload & Analyze</button>
-                    </form>
-                </div>
-               
-                <div class="option">
-                    <h3>Analyze GitHub Repository</h3>
-                    <input type="text" id="repo-url" placeholder="https://github.com/username/repository">
-                    <input type="text" id="repo-branch" placeholder="main">
-                    <button onclick="analyzeGitHubRepo()">Analyze Repository</button>
-                </div>
-               
-                <div class="option development-only">
-                    <h3>Local Directory (Development only)</h3>
-                    <input type="text" id="directory-path" placeholder="Enter the full path to your code directory...">
-                    <button onclick="analyzeCode()">Analyze Code</button>
-                </div>
+        <h2 class="section-title">Why Code2Arch?</h2>
+        <div class="features-list">
+            <div class="feature">
+                <img src="assets/icon-code.svg" alt="Code Parsing">
+                <h3>🔍 Code Parsing</h3>
+                <p>Instantly analyze your codebase structure with smart detection.</p>
             </div>
-           
-            <div id="loading" class="loading" style="display: none;">
-                <p>Analyzing code... This may take a moment.</p>
+            <div class="feature">
+                <img src="assets/icon-diagram.svg" alt="Diagram Generation">
+                <h3>📊 Diagram Generation</h3>
+                <p>Automatically create clean, readable architectural diagrams.</p>
             </div>
-           
-            <div id="code-analysis-results" style="display: none;">
-                <div class="tabs">
-                    <div class="tab active" onclick="switchResultTab('graph-view')">Graph View</div>
-                    <div class="tab" onclick="switchResultTab('node-list-view')">Node List</div>
-                </div>
-               
-                <div id="graph-view" class="tab-content active">
-                    <div id="code-diagram" class="diagram-container"></div>
-                </div>
-               
-                <div id="node-list-view" class="tab-content">
-                    <div class="node-list" id="node-list"></div>
-                </div>
-               
-                <div class="interpretation">
-                    <h3>AI Interpretation</h3>
-                    <p>Click the button below to get an AI interpretation of the code structure:</p>
-                    <button onclick="interpretCodeStructure()">Generate Interpretation</button>
-                    <div id="ai-interpretation"></div>
-                </div>
+            <div class="feature">
+                <img src="assets/icon-speed.svg" alt="Fast Processing">
+                <h3>⚡ Lightweight & Fast</h3>
+                <p>Optimized for speed with minimal dependencies.</p>
             </div>
         </div>
     </div>
+</section>
 
-    <script src="static\js\script.js"></script>
+
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Upload Your Code</strong> – Supports multiple languages.</li>
+                <li><strong>Analyze & Convert</strong> – AI-powered structure detection.</li>
+                <li><strong>Download Your Diagram</strong> – Available in PNG, SVG, and PDF.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Try It Now -->
+  
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Code2Arch. All rights reserved.</p>
+            <ul>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

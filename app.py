@@ -1,4 +1,3 @@
-
 import time
 import stat
 from flask import Flask, render_template, request, jsonify
@@ -269,6 +268,10 @@ def upload_code():
    
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 def filter_graph(graph, filters):
     """Filter the graph based on user-specified criteria."""

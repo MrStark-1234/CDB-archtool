@@ -1,0 +1,82 @@
+DB-archfool\templates\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Diagram Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="static\styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Architecture & Code Analysis Tool</h1>
+       
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('text-tab')">Text to Diagram</div>
+            <div class="tab" onclick="switchTab('code-tab')">Code Analysis</div>
+        </div>
+       
+        <div id="text-tab" class="tab-content active">
+            <h2>Generate Diagram from Text</h2>
+            <textarea id="input-text" placeholder="Enter your architecture description here..."></textarea>
+            <button onclick="generateDiagram()">Generate Diagram</button>
+            <div id="text-diagram" class="diagram-container"></div>
+        </div>
+       
+        <div id="code-tab" class="tab-content">
+            <h2>Analyze Code Structure</h2>
+            <div class="upload-options">
+                <div class="option">
+                    <h3>Upload ZIP File</h3>
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <input type="file" id="codebase-upload" name="codebase" accept=".zip">
+                        <button type="button" onclick="uploadCodebase()">Upload & Analyze</button>
+                    </form>
+                </div>
+               
+                <div class="option">
+                    <h3>Analyze GitHub Repository</h3>
+                    <input type="text" id="repo-url" placeholder="https://github.com/username/repository">
+                    <input type="text" id="repo-branch" placeholder="main">
+                    <button onclick="analyzeGitHubRepo()">Analyze Repository</button>
+                </div>
+               
+                <div class="option development-only">
+                    <h3>Local Directory (Development only)</h3>
+                    <input type="text" id="directory-path" placeholder="Enter the full path to your code directory...">
+                    <button onclick="analyzeCode()">Analyze Code</button>
+                </div>
+            </div>
+           
+            <div id="loading" class="loading" style="display: none;">
+                <p>Analyzing code... This may take a moment.</p>
+            </div>
+           
+            <div id="code-analysis-results" style="display: none;">
+                <div class="tabs">
+                    <div class="tab active" onclick="switchResultTab('graph-view')">Graph View</div>
+                    <div class="tab" onclick="switchResultTab('node-list-view')">Node List</div>
+                </div>
+               
+                <div id="graph-view" class="tab-content active">
+                    <div id="code-diagram" class="diagram-container"></div>
+                </div>
+               
+                <div id="node-list-view" class="tab-content">
+                    <div class="node-list" id="node-list"></div>
+                </div>
+               
+                <div class="interpretation">
+                    <h3>AI Interpretation</h3>
+                    <p>Click the button below to get an AI interpretation of the code structure:</p>
+                    <button onclick="interpretCodeStructure()">Generate Interpretation</button>
+                    <div id="ai-interpretation"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static\js\script.js"></script>
+</body>
+</html>

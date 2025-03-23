@@ -12,6 +12,7 @@ mermaid.initialize({
     fontSize: 14
 });
 
+
 // Store the graph data globally for use in interpretation
 let currentGraphData = null;
 
