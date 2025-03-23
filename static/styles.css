@@ -1,0 +1,332 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background: Cyberpunk Gradient */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0D0D2B, #2A0A46);
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.main-content {
+    margin-left: 270px; /* Adjust based on sidebar */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Ensure sections take full viewport height for better scrolling */
+section {
+    padding: 80px 0;
+    min-height: 100vh;
+}
+
+
+/* Holographic Glow Effect */
+.container, .login-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    max-width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+
+/* Text Styling */
+h1, h2 {
+    font-size: 2.5rem;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 10px auto;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Start & Login Button */
+.start-btn, .login-container button {
+    padding: 14px 30px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* Hover Effect */
+.start-btn:hover, .login-container button:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+    color: black;
+}
+
+/* Input Fields */
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #00FFFF;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+/* Input Focus Effect */
+.login-container input:focus {
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Glow Pulse Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); }
+    100% { box-shadow: 0 0 25px rgba(0, 255, 255, 1); }
+}
+
+.start-btn, .login-container button {
+    animation: glow 1.5s infinite alternate ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+/* Sidebar - Fixed to the Extreme Left */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: rgba(10, 10, 30, 0.9);
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 0 10px rgba(0, 255, 255, 0.3);
+    z-index: 100;
+}
+
+/* Main Content Adjusted */
+
+
+.sidebar h2 {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: rgba(0, 255, 255, 0.2); /* Cyberpunk button effect */
+    border: 2px solid #00FFFF;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+    background: #00FFFF;
+    color: black;
+    text-shadow: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+#dashboard {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full screen height */
+    text-align: center;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00FFFF;
+}
+
+/* Upload Box */
+.upload-box {
+    border: 2px dashed #00FFFF;
+    padding: 200px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.upload-box p {
+    margin-bottom: 10px;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-btn {
+    padding: 10px 20px;
+    border: 2px solid #00FFFF;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.upload-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    color: black;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.progress-container p {
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #00FFFF;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Architecture Preview */
+.architecture-preview {
+    margin-top: 30px;
+}
+
+.preview-box {
+    height: 400px;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Export Button */
+.export-btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    border: 2px solid #00FFFF;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.export-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    color: black;
+}
+
