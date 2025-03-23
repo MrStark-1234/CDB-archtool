@@ -69,9 +69,9 @@ def convert_to_graph_td(text):
    
     Example format:
     graph TD
-        A[First Step] --> B[Second Step]
-        B --> C[Final Step]
-        B --> D[Alternative Step]
+        A --> B
+        B --> C
+        B --> D
     """
    
     try:
