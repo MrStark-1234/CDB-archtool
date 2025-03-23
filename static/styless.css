@@ -1,5 +1,4 @@
 /* Reset styles */
-/* Reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -27,11 +26,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 3.125rem;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -46,24 +45,24 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
-    background: #00000000;;
+    background: #00000000;
 }
 
 /* Problem Section */
 #problem {
-    height: 100vh; /* Ensures full-screen scroll effect */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #00000000;;
-    padding: 50px;
+    background: #00000000;
+    padding: 3.125rem;
 }
 
 #problem h2 {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-transform: uppercase;
     background: -webkit-linear-gradient(45deg, #ff00ff, #00ffff);
     -webkit-background-clip: text;
@@ -72,26 +71,26 @@ header {
 
 #problem p {
     font-size: 1.5rem;
-    max-width: 800px;
+    max-width: 50rem;
     line-height: 1.5;
     opacity: 0.8;
 }
 
 /* Solution Section */
 #solution {
-    height: 100vh; /* Ensures full-screen scroll effect */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: #00000000;
-    padding: 50px;
+    padding: 3.125rem;
 }
 
 #solution h2 {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-transform: uppercase;
     background: -webkit-linear-gradient(45deg, #00ffff, #ff00ff);
     -webkit-background-clip: text;
@@ -100,7 +99,7 @@ header {
 
 #solution p {
     font-size: 1.5rem;
-    max-width: 800px;
+    max-width: 50rem;
     line-height: 1.5;
     opacity: 0.8;
 }
@@ -113,13 +112,13 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #00000000;;
-    padding: 50px;
+    background: #00000000;
+    padding: 3.125rem;
 }
 
 #features h2 {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-transform: uppercase;
     background: -webkit-linear-gradient(45deg, #00ffcc, #ff00ff);
     -webkit-background-clip: text;
@@ -128,36 +127,35 @@ header {
 
 #features p {
     font-size: 1.5rem;
-    max-width: 800px;
+    max-width: 50rem;
     line-height: 1.5;
     opacity: 0.8;
 }
 
-
 /* Solution Points */
 .solution-points {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 1.875rem;
+    margin-top: 1.875rem;
 }
 
 .point {
-    width: 300px;
-    padding: 20px;
+    width: 18.75rem;
+    padding: 1.25rem;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    border-radius: 0.625rem;
+    box-shadow: 0 0 1.25rem rgba(255, 0, 255, 0.3);
     transition: 0.3s ease-in-out;
 }
 
 .point:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+    box-shadow: 0 0 1.5625rem rgba(0, 255, 255, 0.7);
 }
 
 .point h3 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     background: -webkit-linear-gradient(45deg, #ff00ff, #00ffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -170,16 +168,16 @@ header {
 
 /* Logo */
 .logo {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
 }
 
 /* Navigation Bar */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 1.5625rem;
 }
 
 nav ul li {
@@ -190,8 +188,8 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    padding: 10px 15px;
+    font-size: 1.125rem;
+    padding: 0.625rem 0.9375rem;
     position: relative;
     transition: color 0.3s ease-in-out;
 }
@@ -200,16 +198,16 @@ nav ul li a::before {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -5px;
+    bottom: -0.3125rem;
     width: 0;
-    height: 3px;
+    height: 0.1875rem;
     background: linear-gradient(90deg, #ff00ff, #00ffff);
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    text-shadow: 0 0 0.625rem #00ffcc;
 }
 
 nav ul li a:hover::before {
@@ -219,11 +217,11 @@ nav ul li a:hover::before {
 
 /* Try Now Button */
 .btn {
-    padding: 12px 30px;
-    font-size: 16px;
+    padding: 0.75rem 1.875rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    border: 2px solid white;
+    border: 0.125rem solid white;
     text-decoration: none;
     transition: 0.3s ease-in-out;
     position: relative;
@@ -233,22 +231,8 @@ nav ul li a:hover::before {
 .btn:hover {
     background: white;
     color: black;
-    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    box-shadow: 0 0 0.625rem #00ffcc, 0 0 1.25rem #00ffcc;
 }
-
-/* Hero Section */
-
-
-/* Footer */
-footer {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-
 
 /* Glowing Sphere Effect */
 .glowing-sphere {
@@ -256,16 +240,13 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 15.625rem;
+    height: 15.625rem;
     background: radial-gradient(circle, rgba(255, 0, 255, 0.8) 10%, rgba(0, 0, 0, 0) 60%);
     border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(2.5rem);
     animation: pulse 3s infinite alternate;
 }
-/* Problem Section */
-
-
 
 /* Glowing Animation */
 @keyframes pulse {
@@ -284,16 +265,16 @@ footer {
     font-size: 6rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 0.1875rem;
 }
 
 /* Learn More Link */
 .learn-more {
     display: inline-block;
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 1.25rem;
+    font-size: 1rem;
     text-decoration: none;
-    border-bottom: 2px solid white;
+    border-bottom: 0.125rem solid white;
     transition: 0.3s;
 }
 
@@ -305,11 +286,12 @@ footer {
 /* Footer */
 footer {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 12px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    font-size: 0.75rem;
     opacity: 0.7;
 }
+
 
 /* Particle Container */
 .particle-container {
