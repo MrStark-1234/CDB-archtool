@@ -417,3 +417,29 @@ function toggleFullscreen(containerId) {
 function uploadCodebase() {
     alert("Upload functionality not implemented yet");
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript Loaded!");
+
+    function smoothScroll(targetId) {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            console.log("Scrolling to:", targetId);
+            targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+            console.error("Section not found:", targetId);
+        }
+    }
+
+    document.querySelector(".problem-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+        smoothScroll("#problem");
+    });
+
+    document.querySelector(".solution-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+        smoothScroll("#solution");
+    });
+});
+

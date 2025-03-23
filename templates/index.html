@@ -3,89 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code2Arch - Code to Architecture Converter</title>
-    <link rel="stylesheet" href="static/styless.css">
+    <title>Project Twelve</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styless.css') }}">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <div class="container">
-            <h1 class="logo">Code2Arch</h1>
+    <div class="main-container">
+        <header>
+            <div class="logo">C2A</div>
             <nav>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#try">Try It</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#problem" class="problem-btn">Problem</a></li>
+                    <li><a href="#">Solution</a></li>
+                    <li><a href="#">Features</a></li>
                 </ul>
-            </nav>            
-        </div>
-    </header>
+            </nav>
+            <!-- Updated Try Now button -->
+            <a href="/dashboard" class="btn">Try Now</a>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>From Code to Architecture in Seconds</h2>
-            <p>Generate precise architectural diagrams from your code effortlessly.</p>
-            <!-- Updated Try It Now button -->
-            <a href="/dashboard" id="try-now-btn" class="btn primary">Try It Now</a>
-            <a href="#features" class="btn secondary">Learn More</a>
+        <!-- 🚀 Landing Page Section -->
+        <div class="hero">
+            <div class="glowing-sphere"></div>
+            <h1>C 2 A</h1>
+            <!-- Updated link for TRY NOW -->
+            <a href="/dashboard" class="learn-more">TRY NOW</a>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <!-- Features Section -->
-<!-- Features Section -->
-<section id="features" class="features">
-    <div class="container">
-        <h2 class="section-title">Why Code2Arch?</h2>
-        <div class="features-list">
-            <div class="feature">
-                <img src="assets/icon-code.svg" alt="Code Parsing">
-                <h3>🔍 Code Parsing</h3>
-                <p>Instantly analyze your codebase structure with smart detection.</p>
+        <!-- 🚀 Problem Section Below Hero -->
+        <section id="problem">
+            <h2>Problem Statement</h2>
+            <p>
+                Many developers struggle with understanding complex codebases due to poor documentation 
+                and lack of visual representation. Our tool aims to solve this issue by providing 
+                automatic code analysis and diagram generation.
+            </p>
+        </section>
+        <section id="solution">
+            <h2>Solution: Codebase Architecture</h2>
+            <p>
+                Understanding a codebase becomes significantly easier when we **visualize its architecture**.  
+                Our tool generates **automatic architecture diagrams** by analyzing the code structure,  
+                dependencies, and relationships between different components.
+            </p>
+
+            <div class="solution-points">
+                <div class="point">
+                    <h3>🛠 Code Structure Analysis</h3>
+                    <p>Break down the files, modules, and dependencies to create an **organized view**.</p>
+                </div>
+                <div class="point">
+                    <h3>📊 Interactive Visual Diagrams</h3>
+                    <p>Convert the analyzed data into **interactive, zoomable diagrams** for better understanding.</p>
+                </div>
+                <div class="point">
+                    <h3>🔍 Dependency Mapping</h3>
+                    <p>Highlight **interdependencies** and find **bottlenecks** in the system.</p>
+                </div>
             </div>
-            <div class="feature">
-                <img src="assets/icon-diagram.svg" alt="Diagram Generation">
-                <h3>📊 Diagram Generation</h3>
-                <p>Automatically create clean, readable architectural diagrams.</p>
-            </div>
-            <div class="feature">
-                <img src="assets/icon-speed.svg" alt="Fast Processing">
-                <h3>⚡ Lightweight & Fast</h3>
-                <p>Optimized for speed with minimal dependencies.</p>
-            </div>
-        </div>
+        </section>
+        <footer>© 2025 Project Twelve</footer>
     </div>
-</section>
-
-
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <ol>
-                <li><strong>Upload Your Code</strong> – Supports multiple languages.</li>
-                <li><strong>Analyze & Convert</strong> – AI-powered structure detection.</li>
-                <li><strong>Download Your Diagram</strong> – Available in PNG, SVG, and PDF.</li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- Try It Now -->
-  
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Code2Arch. All rights reserved.</p>
-            <ul>
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </div>
-    </footer>
+    <script src="static\js\scriptt.js"></script>
 </body>
 </html>
