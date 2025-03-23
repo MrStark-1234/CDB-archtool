@@ -1,6 +1,9 @@
-# Text to Mermaid Graph Converter
+# Code 2 Architecture
 
-This tool converts code-base into graph TD (Top-Down) format using the Google Gemini API.
+This tool converts code-base into a flow diagram using gemini,mermaid js and lizard parser.
+
+## Hosted link
+http://cdb-archtool.onrender.com
 
 ## Setup
 
@@ -46,6 +49,3 @@ graph TD
     B --> C[User Logout]
 ```
 
-## Hosted Link
-
-http://cdb-archtool.onrender.com
