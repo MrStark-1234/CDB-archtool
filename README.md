@@ -3,7 +3,7 @@
 This tool converts code-base into a flow diagram using gemini,mermaid js and lizard parser.
 
 ## Hosted link
-http://cdb-archtool.onrender.com
+http://cdb-archtool.onrender.com (use link of public repository as input)
 
 ## Setup
 
