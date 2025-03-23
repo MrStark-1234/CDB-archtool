@@ -46,7 +46,7 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(to bottom right, #0a0a0a, #121212, #181818);
+    background: #00000000;;
 }
 
 /* Problem Section */
@@ -57,7 +57,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #121212, #181818);
+    background: #00000000;;
     padding: 50px;
 }
 
@@ -85,7 +85,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #1e1e1e, #282828);
+    background: #00000000;
     padding: 50px;
 }
 
@@ -104,6 +104,35 @@ header {
     line-height: 1.5;
     opacity: 0.8;
 }
+
+/* Features Section */
+#features {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #00000000;;
+    padding: 50px;
+}
+
+#features h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#features p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
 
 /* Solution Points */
 .solution-points {
