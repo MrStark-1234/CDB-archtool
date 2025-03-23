@@ -487,4 +487,7 @@ def process_codebase(directory, filters=None):
     return graph_data
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # For local development use debug mode and specific port
+    # For Render deployment, use environment variables
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
