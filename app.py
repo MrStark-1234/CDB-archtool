@@ -381,5 +381,10 @@ def detect_cycles(graph):
     
     return graph, cycles
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('combined_dashboard.html')
+
 if __name__ == '__main__':
+    
     app.run(debug=True, port=5000)
